@@ -1,0 +1,22 @@
+# conda env create -f environment.yml
+# conda activate goaround
+name: goaround
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - traffic
+  - pyopensky
+  - polars
+  - pyarrow
+  - pandas
+  - scikit-learn
+  - lightgbm
+  - shap
+  - matplotlib
+  - jupyterlab
+  - requests
+  - python-dotenv
+  - jsonschema
+  - pytest
+  - ruff

@@ -1,0 +1,23 @@
+{
+  "schema_version": "0.1",
+  "sample": true,
+  "generated_utc": null,
+  "base_rate": null,
+  "v1": {
+    "pr_auc": null,
+    "brier": null,
+    "capture_top5pct": null,
+    "heldout_airports_pr_auc": null,
+    "n_test": null
+  },
+  "v2": null,
+  "calibration_bins": [],
+  "pr_curve": {
+    "v1": []
+  },
+  "capture_curve": {
+    "v1": []
+  },
+  "feature_importance": [],
+  "airport_rates": []
+}

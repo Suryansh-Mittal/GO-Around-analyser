@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "metrics.schema.json",
+  "title": "Model report metrics",
+  "description": "Written by the offline evaluation. Read by the model report (screen 4). Values come only from real runs.",
+  "type": "object",
+  "required": ["schema_version", "generated_utc", "base_rate", "v1", "v2", "calibration_bins", "pr_curve", "capture_curve", "feature_importance", "airport_rates"],
+  "additionalProperties": false,
+  "$defs": {
+    "nnum": { "type": ["number", "null"] },
+    "summary": {
+      "type": "object",
+      "required": ["pr_auc", "brier", "capture_top5pct"],
+      "additionalProperties": false,
+      "properties": {
+        "pr_auc": { "$ref": "#/$defs/nnum" },
+        "brier": { "$ref": "#/$defs/nnum" },
+        "capture_top5pct": { "$ref": "#/$defs/nnum", "description": "share of go-arounds in the riskiest 5% of approaches" },
+        "heldout_airports_pr_auc": { "$ref": "#/$defs/nnum" },
+        "n_test": { "type": ["integer", "null"] }
+      }
+    },
+    "pairs": {
+      "type": "array",
+      "items": { "type": "array", "prefixItems": [{ "type": "number" }, { "type": "number" }], "minItems": 2, "maxItems": 2 }
+    }
+  },
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "sample": { "type": "boolean" },
+    "generated_utc": { "type": ["string", "null"], "format": "date-time" },
+    "base_rate": { "$ref": "#/$defs/nnum" },
+    "v1": { "$ref": "#/$defs/summary" },
+    "v2": { "anyOf": [{ "$ref": "#/$defs/summary" }, { "type": "null" }] },
+    "calibration_bins": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["version", "mean_pred", "frac_pos", "count"],
+        "additionalProperties": false,
+        "properties": {
+          "version": { "enum": ["v1", "v2"] },
+          "mean_pred": { "type": "number", "minimum": 0, "maximum": 1 },
+          "frac_pos": { "type": "number", "minimum": 0, "maximum": 1 },
+          "count": { "type": "integer", "minimum": 0 }
+        }
+      }
+    },
+    "pr_curve": {
+      "type": "object",
+      "description": "[recall, precision] pairs per version",
+      "additionalProperties": false,
+      "properties": { "v1": { "$ref": "#/$defs/pairs" }, "v2": { "$ref": "#/$defs/pairs" } }
+    },
+    "capture_curve": {
+      "type": "object",
+      "description": "[top_k_fraction, share_of_go_arounds_captured] pairs per version",
+      "additionalProperties": false,
+      "properties": { "v1": { "$ref": "#/$defs/pairs" }, "v2": { "$ref": "#/$defs/pairs" } }
+    },
+    "feature_importance": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["version", "feature", "mean_abs_shap"],
+        "additionalProperties": false,
+        "properties": {
+          "version": { "enum": ["v1", "v2"] },
+          "feature": { "type": "string" },
+          "mean_abs_shap": { "type": "number", "minimum": 0 }
+        }
+      }
+    },
+    "airport_rates": {
+      "type": "array",
+      "description": "Go-around rate per airport-runway with Wilson 95% CI",
+      "items": {
+        "type": "object",
+        "required": ["airport", "runway", "landings", "go_arounds", "rate", "ci_low", "ci_high"],
+        "additionalProperties": false,
+        "properties": {
+          "airport": { "type": "string", "pattern": "^[A-Z]{4}$" },
+          "runway": { "type": "string" },
+          "landings": { "type": "integer", "minimum": 0 },
+          "go_arounds": { "type": "integer", "minimum": 0 },
+          "rate": { "type": "number", "minimum": 0, "maximum": 1 },
+          "ci_low": { "type": "number", "minimum": 0, "maximum": 1 },
+          "ci_high": { "type": "number", "minimum": 0, "maximum": 1 }
+        }
+      }
+    }
+  }
+}

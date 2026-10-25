@@ -1,0 +1,281 @@
+{
+  "schema_version": "0.1",
+  "sample": true,
+  "icao24": "4ca7b3",
+  "callsign": "SAMPLE1",
+  "airport": "EGLL",
+  "runway": "27L",
+  "start_utc": "2019-03-04T14:02:00Z",
+  "outcome": "go_around",
+  "source": "opensky_weekly",
+  "points": [
+    {
+      "t": 0,
+      "lat": 51.46458,
+      "lon": -0.16658,
+      "dist_nm": 10.0,
+      "height_ft": 3224,
+      "glide_dev_ft": 40,
+      "gs_kt": 170,
+      "vrate_fpm": -800,
+      "lateral_dev_m": -7,
+      "risk": null
+    },
+    {
+      "t": 12,
+      "lat": 51.46481,
+      "lon": -0.18263,
+      "dist_nm": 9.4,
+      "height_ft": 3046,
+      "glide_dev_ft": 53,
+      "gs_kt": 169,
+      "vrate_fpm": -815,
+      "lateral_dev_m": 0,
+      "risk": null
+    },
+    {
+      "t": 24,
+      "lat": 51.46503,
+      "lon": -0.19868,
+      "dist_nm": 8.8,
+      "height_ft": 2868,
+      "glide_dev_ft": 66,
+      "gs_kt": 168,
+      "vrate_fpm": -830,
+      "lateral_dev_m": 7,
+      "risk": null
+    },
+    {
+      "t": 36,
+      "lat": 51.46518,
+      "lon": -0.21473,
+      "dist_nm": 8.2,
+      "height_ft": 2690,
+      "glide_dev_ft": 80,
+      "gs_kt": 166,
+      "vrate_fpm": -845,
+      "lateral_dev_m": 11,
+      "risk": null
+    },
+    {
+      "t": 48,
+      "lat": 51.46519,
+      "lon": -0.23078,
+      "dist_nm": 7.6,
+      "height_ft": 2513,
+      "glide_dev_ft": 93,
+      "gs_kt": 165,
+      "vrate_fpm": -860,
+      "lateral_dev_m": 12,
+      "risk": null
+    },
+    {
+      "t": 60,
+      "lat": 51.46506,
+      "lon": -0.24683,
+      "dist_nm": 7.0,
+      "height_ft": 2335,
+      "glide_dev_ft": 106,
+      "gs_kt": 164,
+      "vrate_fpm": -875,
+      "lateral_dev_m": 8,
+      "risk": null
+    },
+    {
+      "t": 72,
+      "lat": 51.46485,
+      "lon": -0.26288,
+      "dist_nm": 6.4,
+      "height_ft": 2157,
+      "glide_dev_ft": 119,
+      "gs_kt": 163,
+      "vrate_fpm": -890,
+      "lateral_dev_m": 1,
+      "risk": null
+    },
+    {
+      "t": 84,
+      "lat": 51.46461,
+      "lon": -0.27894,
+      "dist_nm": 5.8,
+      "height_ft": 1979,
+      "glide_dev_ft": 132,
+      "gs_kt": 162,
+      "vrate_fpm": -905,
+      "lateral_dev_m": -6,
+      "risk": null
+    },
+    {
+      "t": 96,
+      "lat": 51.46445,
+      "lon": -0.29499,
+      "dist_nm": 5.2,
+      "height_ft": 1801,
+      "glide_dev_ft": 146,
+      "gs_kt": 160,
+      "vrate_fpm": -920,
+      "lateral_dev_m": -11,
+      "risk": null
+    },
+    {
+      "t": 108,
+      "lat": 51.4644,
+      "lon": -0.31104,
+      "dist_nm": 4.6,
+      "height_ft": 1623,
+      "glide_dev_ft": 159,
+      "gs_kt": 159,
+      "vrate_fpm": -935,
+      "lateral_dev_m": -12,
+      "risk": null
+    },
+    {
+      "t": 120,
+      "lat": 51.4645,
+      "lon": -0.32709,
+      "dist_nm": 4.0,
+      "height_ft": 1446,
+      "glide_dev_ft": 172,
+      "gs_kt": 158,
+      "vrate_fpm": -950,
+      "lateral_dev_m": -9,
+      "risk": null
+    },
+    {
+      "t": 132,
+      "lat": 51.4647,
+      "lon": -0.34314,
+      "dist_nm": 3.4,
+      "height_ft": 1268,
+      "glide_dev_ft": 185,
+      "gs_kt": 157,
+      "vrate_fpm": -965,
+      "lateral_dev_m": -3,
+      "risk": null
+    },
+    {
+      "t": 144,
+      "lat": 51.46493,
+      "lon": -0.35919,
+      "dist_nm": 2.8,
+      "height_ft": 1090,
+      "glide_dev_ft": 198,
+      "gs_kt": 156,
+      "vrate_fpm": -980,
+      "lateral_dev_m": 4,
+      "risk": null
+    },
+    {
+      "t": 156,
+      "lat": 51.46512,
+      "lon": -0.37524,
+      "dist_nm": 2.2,
+      "height_ft": 912,
+      "glide_dev_ft": 212,
+      "gs_kt": 154,
+      "vrate_fpm": -995,
+      "lateral_dev_m": 10,
+      "risk": null
+    },
+    {
+      "t": 168,
+      "lat": 51.4652,
+      "lon": -0.3913,
+      "dist_nm": 1.6,
+      "height_ft": 734,
+      "glide_dev_ft": 225,
+      "gs_kt": 153,
+      "vrate_fpm": -1010,
+      "lateral_dev_m": 12,
+      "risk": null
+    },
+    {
+      "t": 190,
+      "lat": 51.4648,
+      "lon": -0.42072,
+      "dist_nm": 0.5,
+      "height_ft": 1184,
+      "glide_dev_ft": null,
+      "gs_kt": 160,
+      "vrate_fpm": 2200,
+      "lateral_dev_m": 0,
+      "risk": null
+    },
+    {
+      "t": 200,
+      "lat": 51.4648,
+      "lon": -0.4341,
+      "dist_nm": 0.0,
+      "height_ft": 1634,
+      "glide_dev_ft": null,
+      "gs_kt": 165,
+      "vrate_fpm": 2200,
+      "lateral_dev_m": 0,
+      "risk": null
+    },
+    {
+      "t": 210,
+      "lat": 51.4648,
+      "lon": -0.44748,
+      "dist_nm": -0.5,
+      "height_ft": 2084,
+      "glide_dev_ft": null,
+      "gs_kt": 170,
+      "vrate_fpm": 2200,
+      "lateral_dev_m": 0,
+      "risk": null
+    },
+    {
+      "t": 220,
+      "lat": 51.4648,
+      "lon": -0.46085,
+      "dist_nm": -1.0,
+      "height_ft": 2534,
+      "glide_dev_ft": null,
+      "gs_kt": 175,
+      "vrate_fpm": 2200,
+      "lateral_dev_m": 0,
+      "risk": null
+    },
+    {
+      "t": 230,
+      "lat": 51.4648,
+      "lon": -0.47423,
+      "dist_nm": -1.5,
+      "height_ft": 2984,
+      "glide_dev_ft": null,
+      "gs_kt": 180,
+      "vrate_fpm": 2200,
+      "lateral_dev_m": 0,
+      "risk": null
+    }
+  ],
+  "gates": {
+    "1000ft": {
+      "reached": true,
+      "on_glide": false,
+      "on_speed": true,
+      "sink_ok": true,
+      "aligned": true
+    },
+    "500ft": {
+      "reached": false,
+      "on_glide": null,
+      "on_speed": null,
+      "sink_ok": null,
+      "aligned": null
+    }
+  },
+  "top_factors": [
+    {
+      "feature": "tailwind_kt",
+      "value": 9,
+      "contribution": 0.12
+    },
+    {
+      "feature": "glide_dev_ft_at_2nm",
+      "value": 216,
+      "contribution": 0.09
+    }
+  ]
+}

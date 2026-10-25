@@ -1,0 +1,52 @@
+# --- Secrets ---
+.env
+.env.*
+!.env.example
+settings.conf
+
+# --- Data (never committed; see data/README.md) ---
+data/*
+!data/README.md
+*.parquet
+*.avro
+*.csv.gz
+*.tar
+*.tar.gz
+
+# --- Models and run outputs ---
+models/
+*.pkl
+*.joblib
+*.lgb
+*.cbm
+mlruns/
+outputs/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# --- Notebooks ---
+.ipynb_checkpoints/
+
+# --- Frontend ---
+node_modules/
+web/dist/
+
+# --- OS / editors ---
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

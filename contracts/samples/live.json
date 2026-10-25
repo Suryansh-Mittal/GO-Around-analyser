@@ -1,0 +1,116 @@
+{
+  "schema_version": "0.1",
+  "sample": true,
+  "airport": "EGLL",
+  "updated_utc": "2026-11-02T14:05:20Z",
+  "conditions": {
+    "metar": "EGLL 021350Z 25012G22KT 9999 BKN025 12/07 Q1009",
+    "metar_time_utc": "2026-11-02T13:50:00Z",
+    "runways": [
+      {
+        "id": "27L",
+        "heading_deg": 270,
+        "crosswind_kt": 2,
+        "headwind_kt": 11,
+        "active": true
+      },
+      {
+        "id": "27R",
+        "heading_deg": 270,
+        "crosswind_kt": 2,
+        "headwind_kt": 11,
+        "active": false
+      }
+    ],
+    "landings_last_30min": 21
+  },
+  "aircraft": [
+    {
+      "icao24": "4ca7b3",
+      "callsign": "SAMPLE1",
+      "lat": 51.4651,
+      "lon": -0.3222,
+      "baro_alt_ft": 1550,
+      "gs_kt": 152,
+      "vrate_fpm": -820,
+      "heading_deg": 270,
+      "runway": "27L",
+      "dist_nm": 4.2,
+      "risk": 0.41,
+      "risk_band": "high",
+      "flight_file": "flights/4ca7b3_1551708120.json",
+      "trail": [
+        [
+          51.4652,
+          -0.2794
+        ],
+        [
+          51.4651,
+          -0.3008
+        ],
+        [
+          51.4651,
+          -0.3222
+        ]
+      ]
+    },
+    {
+      "icao24": "400a1e",
+      "callsign": "SAMPLE2",
+      "lat": 51.466,
+      "lon": -0.0613,
+      "baro_alt_ft": 4500,
+      "gs_kt": 185,
+      "vrate_fpm": -950,
+      "heading_deg": 271,
+      "runway": "27L",
+      "dist_nm": 14.0,
+      "risk": 0.03,
+      "risk_band": "low",
+      "flight_file": null,
+      "trail": [
+        [
+          51.4665,
+          -0.0185
+        ],
+        [
+          51.4662,
+          -0.0399
+        ],
+        [
+          51.466,
+          -0.0613
+        ]
+      ]
+    },
+    {
+      "icao24": "3c6675",
+      "callsign": "SAMPLE3",
+      "lat": 51.56,
+      "lon": 0.05,
+      "baro_alt_ft": 7000,
+      "gs_kt": 230,
+      "vrate_fpm": -600,
+      "heading_deg": 225,
+      "runway": null,
+      "dist_nm": null,
+      "risk": null,
+      "risk_band": null,
+      "flight_file": null,
+      "trail": [
+        [
+          51.58,
+          0.08
+        ],
+        [
+          51.57,
+          0.065
+        ],
+        [
+          51.56,
+          0.05
+        ]
+      ]
+    }
+  ]
+}

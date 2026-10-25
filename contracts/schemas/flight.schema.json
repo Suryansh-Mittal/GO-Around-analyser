@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "flight.schema.json",
+  "title": "Flight approach profile",
+  "description": "One file per approach: flights/{icao24}_{unix_time}.json. Read by the approach profile (screen 2) and replay mode (screen 3).",
+  "type": "object",
+  "required": ["schema_version", "icao24", "callsign", "airport", "runway", "outcome", "points", "gates", "top_factors"],
+  "additionalProperties": false,
+  "$defs": {
+    "gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "reached": { "type": "boolean" },
+        "on_glide": { "type": ["boolean", "null"] },
+        "on_speed": { "type": ["boolean", "null"] },
+        "sink_ok": { "type": ["boolean", "null"] },
+        "aligned": { "type": ["boolean", "null"] }
+      }
+    }
+  },
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "sample": { "type": "boolean" },
+    "icao24": { "type": "string", "pattern": "^[0-9a-f]{6}$" },
+    "callsign": { "type": ["string", "null"] },
+    "airport": { "type": "string", "pattern": "^[A-Z]{4}$" },
+    "runway": { "type": ["string", "null"] },
+    "start_utc": { "type": "string", "format": "date-time" },
+    "outcome": { "enum": ["go_around", "landed", "live"] },
+    "source": { "enum": ["live", "opensky_weekly", "trino"], "description": "where the trajectory came from" },
+    "points": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["t", "lat", "lon", "dist_nm", "height_ft", "glide_dev_ft", "gs_kt", "vrate_fpm", "lateral_dev_m", "risk"],
+        "additionalProperties": false,
+        "properties": {
+          "t": { "type": "number", "minimum": 0, "description": "seconds since start_utc" },
+          "lat": { "type": "number", "minimum": -90, "maximum": 90 },
+          "lon": { "type": "number", "minimum": -180, "maximum": 180 },
+          "dist_nm": { "type": ["number", "null"], "description": "to threshold; may go negative past it" },
+          "height_ft": { "type": ["number", "null"], "description": "above threshold elevation" },
+          "glide_dev_ft": { "type": ["number", "null"], "description": "+ above the 3 deg path" },
+          "gs_kt": { "type": ["number", "null"] },
+          "vrate_fpm": { "type": ["number", "null"] },
+          "lateral_dev_m": { "type": ["number", "null"], "description": "+ right of centreline" },
+          "risk": { "type": ["number", "null"], "minimum": 0, "maximum": 1, "description": "null until a v2 model exists" }
+        }
+      }
+    },
+    "gates": {
+      "type": "object",
+      "required": ["1000ft", "500ft"],
+      "additionalProperties": false,
+      "properties": {
+        "1000ft": { "$ref": "#/$defs/gate" },
+        "500ft": { "$ref": "#/$defs/gate" }
+      }
+    },
+    "top_factors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["feature", "value", "contribution"],
+        "additionalProperties": false,
+        "properties": {
+          "feature": { "type": "string" },
+          "value": { "type": ["number", "string", "null"] },
+          "contribution": { "type": "number", "description": "SHAP value; + raises risk" }
+        }
+      }
+    }
+  }
+}
