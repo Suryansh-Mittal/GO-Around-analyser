@@ -1,8 +1,9 @@
-# conda env create -f environment.yml
+# mamba env create -f environment.yml   (or: conda env create -f environment.yml)
 # conda activate goaround
 name: goaround
 channels:
   - conda-forge
+  - nodefaults
 dependencies:
   - python=3.12
   - traffic

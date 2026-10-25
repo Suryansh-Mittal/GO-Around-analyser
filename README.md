@@ -35,7 +35,7 @@ data/        local data only, never committed (see data/README.md)
 ## Setup
 
 ```bash
-conda env create -f environment.yml
+mamba env create -f environment.yml   # mamba ships with Miniforge; uses far less memory than conda
 conda activate goaround
 cp .env.example .env   # add your OpenSky API client ID and secret
 pytest
